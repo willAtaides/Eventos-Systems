@@ -34,7 +34,6 @@ O projeto foi modelado com base nos diagramas abaixo:
 - Spring Boot
 - Spring Data JPA (Hibernate)
 - H2 Database (memória)
-- Lombok
 - Maven
 
 ---
