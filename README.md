@@ -7,9 +7,11 @@ Este é um sistema de exemplo construído com Spring Boot e JPA (Hibernate) que 
 O projeto foi modelado com base nos diagramas abaixo:
 
 Diagrama Conceitual do Sistema
-
+src/docs/modelo-conceitual.png 
 
 Exemplo de Instâncias com Dados
+src/docs/exemplo-instancias.png
+
 
 📌 Funcionalidades
 Cadastro de Participantes com nome e e-mail.
@@ -88,6 +90,8 @@ Validações com Bean Validation
 API REST para consumo externo
 
 Exportação de listas de participantes por atividade
+
+
 
 👨‍💻 Autor
 Desenvolvido por Willian Ataides
