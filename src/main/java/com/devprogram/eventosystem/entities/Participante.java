@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 @Entity
 @Table(name = "tb_participante")
@@ -17,9 +18,13 @@ public class Participante {
     @Column(unique = true)
     private String email;
 
-    @ManyToOne
-    @JoinColumn(name= "atividade_id")
-    private Atividade atividade;
+    @ManyToMany
+    @JoinTable(
+            name = "tb_participante_atividade",
+            joinColumns = @JoinColumn(name = "participante_id"),
+            inverseJoinColumns = @JoinColumn(name = "atividade_id")
+    )
+    private List<Atividade> atividades = new ArrayList<>();
 
     public Participante(){
 
@@ -55,9 +60,22 @@ public class Participante {
         this.email = email;
     }
 
+    public List<Atividade> getAtividades() {
+        return atividades;
+    }
 
-    public Atividade getAtividade() {
-        return atividade;
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Participante that = (Participante) o;
+        return Objects.equals(id, that.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(id);
     }
 }
 
