@@ -13,10 +13,12 @@ public class Categoria {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+
+    @Column(columnDefinition = "TEXT")
     private String descricao;
 
     @OneToMany(mappedBy = "categoria")
-    private List<Atividades> atividades = new ArrayList<>();
+    private List<Atividade> atividade = new ArrayList<>();
     public Categoria(){
 
     }
@@ -42,7 +44,7 @@ public class Categoria {
         this.descricao = descricao;
     }
 
-    public List<Atividades> getAtividades() {
-        return atividades;
+    public List<Atividade> getAtividades() {
+        return atividade;
     }
 }

@@ -6,13 +6,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name = "tb_atividades")
-public class Atividades {
+@Table(name = "tb_atividade")
+public class Atividade {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String nome;
+
+    @Column(columnDefinition = "TEXT")
     private String descricao;
     private Double preco;
 
@@ -20,14 +22,18 @@ public class Atividades {
     @JoinColumn(name = "categoria_id")
     private Categoria categoria;
 
-    @OneToMany(mappedBy = "atividades")
-    private List<Bloco> bloco = new ArrayList<>();
+    @OneToMany(mappedBy = "atividade")
+    private List<Bloco> blocos = new ArrayList<>();
 
-    public Atividades(){
+    @OneToMany(mappedBy = "atividade")
+    private List<Participante> participantes = new ArrayList<>();
+
+
+    public Atividade(){
 
     }
 
-    public Atividades(Integer id, Double preco, String descricao, String nome) {
+    public Atividade(Integer id, Double preco, String descricao, String nome) {
         this.id = id;
         this.preco = preco;
         this.descricao = descricao;
@@ -76,6 +82,10 @@ public class Atividades {
 
 
     public List<Bloco> getBloco() {
-        return bloco;
+        return blocos;
+    }
+
+    public List<Participante> getParticipante() {
+        return participantes;
     }
 }

@@ -19,8 +19,8 @@ public class Bloco {
     private Instant fim;
 
     @ManyToOne
-    @JoinColumn(name = "atividades_id")
-    private Atividades atividades;
+    @JoinColumn(name = "atividade_id")
+    private Atividade atividade;
 
     public Bloco(){
 
@@ -56,7 +56,7 @@ public class Bloco {
         this.fim = fim;
     }
 
-    public Atividades getAtividades() {
-        return atividades;
+    public Atividade getAtividade() {
+        return atividade;
     }
 }
