@@ -42,10 +42,10 @@ O projeto foi modelado com base nos diagramas abaixo:
 
 ```bash
 # Clone o repositório
-git clone https://github.com/seu-usuario/seu-repositorio.git
+git clone git@github.com:willAtaides/Eventos-Systems.git
 
 # Entre no diretório do projeto
-cd seu-repositorio
+cd Eventos-Systems
 
 # Rode a aplicação
 ./mvnw spring-boot:run
